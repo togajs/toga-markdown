@@ -1,0 +1,46 @@
+{
+  "name": "toga-formatter-markdown",
+  "version": "0.1.0-alpha.1",
+  "description": "An inline-documentation Markdown formatter for Toga documentation.",
+  "keywords": [
+    "toga",
+    "formatter",
+    "documentation",
+    "docblock",
+    "docs",
+    "doc"
+  ],
+  "homepage": "https://github.com/togajs/toga-formatter-markdown",
+  "bugs": "https://github.com/togajs/toga-formatter-markdown/issues",
+  "license": "MIT",
+  "author": "Shannon Moeller <me@shannonmoeller.com> (http://shannonmoeller.com)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/togajs/toga-formatter-markdown.git"
+  },
+  "scripts": {
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "test": "gulp test"
+  },
+  "dependencies": {
+    "marked": "^0.3.2",
+    "mout": "^0.9.0",
+    "traverse": "^0.6.6"
+  },
+  "devDependencies": {
+    "coveralls": "^2.6.1",
+    "event-stream": "^3.1.1",
+    "gulp": "^3.6.0",
+    "gulp-istanbul": "^0.1.1",
+    "gulp-jasmine": "^0.2.0",
+    "gulp-jscs": "^0.4.1",
+    "gulp-jshint": "^1.5.1",
+    "gulp-watch": "^0.5.3",
+    "jshint-stylish": "^0.1.5",
+    "vinyl-fs": "^0.1.2"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  }
+}

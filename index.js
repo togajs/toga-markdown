@@ -69,7 +69,7 @@ proto._transform = function (file, enc, cb) {
     }
 
     traverse(ast).forEach(function (value) {
-        if (this.key === 'description') {
+        if (this.key === 'description' && value) {
             this.update(marked(value, options));
         }
     });

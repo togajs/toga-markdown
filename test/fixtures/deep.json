@@ -7,7 +7,7 @@
         },
         {
             "type": "Comment",
-            "description": "# Title\n\nLong description that spans multiple\nlines and even has other markdown\ntype things.\n\nLike more paragraphs.\n\n* Like\n* Lists\n\n    var code = 'samples';\n\n",
+            "description": "# Title\n\nLong description that spans multiple\nlines and even has other markdown\ntype things.\n\nLike more paragraphs.\n\n* Like\n* Lists\n\n```js\n    var code = 'samples';\n```\n\n",
             "tags": [
                 {
                     "tag": "arg",
@@ -46,7 +46,7 @@
         },
         {
             "type": "Comment",
-            "description": "# Title\n\nLong description that spans multiple\nlines and even has other markdown\ntype things.\n\nLike more paragraphs.\n\n* Like\n* Lists\n\n    var code = 'samples';\n\n",
+            "description": "# Title\n\nLong description that spans multiple\nlines and even has other markdown\ntype things.\n\nLike more paragraphs.\n\n* Like\n* Lists\n\n```js\n    var code = 'samples';\n```\n\n",
             "tags": [
                 {
                     "tag": "arg",

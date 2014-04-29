@@ -7,7 +7,7 @@
         },
         {
             "type": "Comment",
-            "description": "<h1 id=\"title\">Title</h1>\n<p>Long description that spans multiple\nlines and even has other markdown\ntype things.</p>\n<p>Like more paragraphs.</p>\n<ul>\n<li>Like</li>\n<li><p>Lists</p>\n<p>  var code = &#39;samples&#39;;</p>\n</li>\n</ul>\n",
+            "description": "<h1 id=\"title\">Title</h1>\n<p>Long description that spans multiple\nlines and even has other markdown\ntype things.</p>\n<p>Like more paragraphs.</p>\n<ul>\n<li>Like</li>\n<li>Lists</li>\n</ul>\n<pre><code class=\"lang-js\">    var code = &#39;samples&#39;;\n</code></pre>\n",
             "tags": [
                 {
                     "tag": "arg",
@@ -46,7 +46,7 @@
         },
         {
             "type": "Comment",
-            "description": "<h1 id=\"title\">Title</h1>\n<p>Long description that spans multiple\nlines and even has other markdown\ntype things.</p>\n<p>Like more paragraphs.</p>\n<ul>\n<li>Like</li>\n<li><p>Lists</p>\n<p>  var code = &#39;samples&#39;;</p>\n</li>\n</ul>\n",
+            "description": "<h1 id=\"title\">Title</h1>\n<p>Long description that spans multiple\nlines and even has other markdown\ntype things.</p>\n<p>Like more paragraphs.</p>\n<ul>\n<li>Like</li>\n<li>Lists</li>\n</ul>\n<pre><code class=\"lang-js\">    var code = &#39;samples&#39;;\n</code></pre>\n",
             "tags": [
                 {
                     "tag": "arg",

@@ -7,11 +7,12 @@
  * Markdown, and replaces the values with the HTML output.
  */
 
-var Transform = require('stream').Transform;
-var inherits = require('mout/lang/inheritPrototype');
-var marked = require('marked');
-var mixIn = require('mout/object/mixIn');
-var traverse = require('traverse');
+var proto,
+	Transform = require('stream').Transform,
+	inherits = require('mout/lang/inheritPrototype'),
+	marked = require('marked'),
+	mixIn = require('mout/object/mixIn'),
+	traverse = require('traverse');
 
 /**
  * @class Tunic
@@ -21,20 +22,20 @@ var traverse = require('traverse');
  * @param {Object} options
  */
 function TogaFormatterMarkdown(options) {
-    if (!(this instanceof TogaFormatterMarkdown)) {
-        return new TogaFormatterMarkdown(options);
-    }
+	if (!(this instanceof TogaFormatterMarkdown)) {
+		return new TogaFormatterMarkdown(options);
+	}
 
-    /**
-     * @property options
-     * @type {Object}
-     */
-    this.options = mixIn({}, this.defaults, options);
+	/**
+	 * @property options
+	 * @type {Object}
+	 */
+	this.options = mixIn({}, this.defaults, options);
 
-    Transform.call(this, { objectMode: true });
+	Transform.call(this, { objectMode: true });
 }
 
-var proto = inherits(TogaFormatterMarkdown, Transform);
+proto = inherits(TogaFormatterMarkdown, Transform);
 
 /**
  * Default options for `marked`.
@@ -43,11 +44,11 @@ var proto = inherits(TogaFormatterMarkdown, Transform);
  * @type {Object}
  */
 proto.defaults = {
-    breaks: false,
-    gfm: true,
-    smartLists: true,
-    smartypants: false,
-    tables: true
+	breaks: false,
+	gfm: true,
+	smartLists: true,
+	smartypants: false,
+	tables: true
 };
 
 /**
@@ -59,23 +60,23 @@ proto.defaults = {
  * @param {Function} cb
  */
 proto._transform = function (file, enc, cb) {
-    var options = this.options;
-    var toga = file && file.toga;
-    var ast = toga && toga.ast;
+	var options = this.options,
+		toga = file && file.toga,
+		ast = toga && toga.ast;
 
-    if (!ast) {
-        this.push(file);
-        return cb();
-    }
+	if (!ast) {
+		this.push(file);
+		return cb();
+	}
 
-    traverse(ast).forEach(function (value) {
-        if (this.key === 'description' && value) {
-            this.update(marked(value, options));
-        }
-    });
+	traverse(ast).forEach(function (value) {
+		if (this.key === 'description' && value) {
+			this.update(marked(value, options));
+		}
+	});
 
-    this.push(file);
-    cb();
+	this.push(file);
+	cb();
 };
 
 module.exports = TogaFormatterMarkdown;

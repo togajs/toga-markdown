@@ -9,9 +9,9 @@
 
 var proto,
 	Transform = require('stream').Transform,
-	inherits = require('mout/lang/inheritPrototype'),
+	inherits = require('mtil/function/inherits'),
 	marked = require('marked'),
-	mixIn = require('mout/object/mixIn'),
+	mixin = require('mtil/object/mixin'),
 	traverse = require('traverse');
 
 /**
@@ -30,7 +30,7 @@ function TogaFormatterMarkdown(options) {
 	 * @property options
 	 * @type {Object}
 	 */
-	this.options = mixIn({}, this.defaults, options);
+	this.options = mixin({}, this.defaults, options);
 
 	Transform.call(this, { objectMode: true });
 }
@@ -66,6 +66,7 @@ proto._transform = function (file, enc, cb) {
 
 	if (!ast) {
 		this.push(file);
+
 		return cb();
 	}
 
@@ -76,6 +77,7 @@ proto._transform = function (file, enc, cb) {
 	});
 
 	this.push(file);
+
 	cb();
 };
 

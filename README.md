@@ -1,6 +1,6 @@
 # `toga-formatter-markdown`
 
-> The Markdown inline-documentation Markdown formatter.
+> The Markdown inline-documentation formatter.
 
 [![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url]
 

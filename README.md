@@ -27,8 +27,8 @@ MIT
 [coveralls-img]: http://img.shields.io/coveralls/togajs/toga-formatter-markdown/master.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/r/togajs/toga-formatter-markdown
 [downloads-img]: http://img.shields.io/npm/dm/toga-formatter-markdown.svg?style=flat-square
-[gitter-img]:    http://img.shields.io/badge/chat-togajs/toga-formatter-markdown-blue.svg?style=flat-square
-[gitter-url]:    https://gitter.im/togajs/toga-formatter-markdown
+[gitter-img]:    http://img.shields.io/badge/chat-togajs/toga-blue.svg?style=flat-square
+[gitter-url]:    https://gitter.im/togajs/toga
 [gittip-img]:    http://img.shields.io/gittip/shannonmoeller.svg?style=flat-square
 [gittip-url]:    https://www.gittip.com/shannonmoeller
 [npm-img]:       http://img.shields.io/npm/v/toga-formatter-markdown.svg?style=flat-square

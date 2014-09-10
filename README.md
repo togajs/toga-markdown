@@ -1,4 +1,6 @@
-# toga-formatter-markdown [![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url]
+# toga-formatter-markdown
+
+[![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url]
 
 Walks a [Toga](http://togajs.github.io) abstract syntax tree, finds all block and tag descriptions, parses them as Markdown, and replaces the values with the HTML output.
 

@@ -2,6 +2,12 @@
 
 Walks a [Toga](http://togajs.github.io) abstract syntax tree, finds all block and tag descriptions, parses them as Markdown, and replaces the values with the HTML output.
 
+## Install
+
+With [Node.js](http://nodejs.org):
+
+    $ npm install toga-formatter-markdown
+
 ## Test
 
     $ npm test

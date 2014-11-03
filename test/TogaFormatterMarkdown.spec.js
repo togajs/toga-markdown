@@ -8,14 +8,14 @@ var TogaFormatterMarkdown = require('../index'),
 describe('TogaFormatterMarkdown', function () {
 	var formatter = TogaFormatterMarkdown;
 
-	it('should create an instance when invoked directly', function () {
-		var f = formatter();
-		expect(f instanceof TogaFormatterMarkdown).to.be(true);
-	});
+	it('should create an instance', function () {
+		var a = formatter(),
+			b = new TogaFormatterMarkdown();
 
-	it('should create an instance when called with `new`', function () {
-		var f = new TogaFormatterMarkdown();
-		expect(f instanceof TogaFormatterMarkdown).to.be(true);
+		expect(a).to.be.a(TogaFormatterMarkdown);
+		expect(b).to.be.a(TogaFormatterMarkdown);
+
+		expect(a).not.to.be(b);
 	});
 
 	describe('prototype', function () {

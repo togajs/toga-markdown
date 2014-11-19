@@ -1,4 +1,4 @@
-# `toga-formatter-markdown`
+# `toga-markdown`
 
 > The Markdown inline-documentation Markdown formatter.
 
@@ -8,7 +8,7 @@ Walks a [Toga](http://togajs.github.io) abstract syntax tree, finds all block an
 
 ## Install
 
-    $ npm install toga-formatter-markdown
+    $ npm install toga-markdown
 
 ## Test
 
@@ -20,20 +20,22 @@ Walks a [Toga](http://togajs.github.io) abstract syntax tree, finds all block an
 
 Standards for this project, including tests, code coverage, and semantics are enforced with a build tool. Pull requests must include passing tests with 100% code coverage and no linting errors.
 
-## License
+----
 
-MIT
+© 2014 Shannon Moeller <me@shannonmoeller.com>
 
-[coveralls-img]: http://img.shields.io/coveralls/togajs/toga-formatter-markdown/master.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/togajs/toga-formatter-markdown
-[downloads-img]: http://img.shields.io/npm/dm/toga-formatter-markdown.svg?style=flat-square
+Licensed under [MIT](http://shannonmoeller.com/mit.txt)
+
+[coveralls-img]: http://img.shields.io/coveralls/togajs/toga-markdown/master.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/togajs/toga-markdown
+[downloads-img]: http://img.shields.io/npm/dm/toga-markdown.svg?style=flat-square
 [gitter-img]:    http://img.shields.io/badge/chat-togajs/toga-blue.svg?style=flat-square
 [gitter-url]:    https://gitter.im/togajs/toga
 [gittip-img]:    http://img.shields.io/gittip/shannonmoeller.svg?style=flat-square
 [gittip-url]:    https://www.gittip.com/shannonmoeller
-[npm-img]:       http://img.shields.io/npm/v/toga-formatter-markdown.svg?style=flat-square
-[npm-url]:       https://npmjs.org/package/toga-formatter-markdown
-[travis-img]:    http://img.shields.io/travis/togajs/toga-formatter-markdown.svg?style=flat-square
-[travis-url]:    https://travis-ci.org/togajs/toga-formatter-markdown
-[waffle-img]:    http://img.shields.io/github/issues/togajs/toga-formatter-markdown.svg?style=flat-square
-[waffle-url]:    http://waffle.io/togajs/toga-formatter-markdown
+[npm-img]:       http://img.shields.io/npm/v/toga-markdown.svg?style=flat-square
+[npm-url]:       https://npmjs.org/package/toga-markdown
+[travis-img]:    http://img.shields.io/travis/togajs/toga-markdown.svg?style=flat-square
+[travis-url]:    https://travis-ci.org/togajs/toga-markdown
+[waffle-img]:    http://img.shields.io/github/issues/togajs/toga-markdown.svg?style=flat-square
+[waffle-url]:    http://waffle.io/togajs/toga-markdown

@@ -30,7 +30,7 @@ exports.formatter = function (options) {
 	var keys = options.keys;
 
 	function format(value) {
-		// jshint validthis:true
+		// jshint validthis: true
 		if (keys.indexOf(this.key) > -1 && value) {
 			this.update(marked(value, options));
 		}

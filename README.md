@@ -1,7 +1,5 @@
 # `toga-markdown`
 
-> The Markdown inline-documentation Markdown formatter.
-
 [![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url]
 
 Walks a [Toga](http://togajs.github.io) abstract syntax tree, finds all block and tag descriptions, parses them as Markdown, and replaces the values with the HTML output.
@@ -10,15 +8,36 @@ Walks a [Toga](http://togajs.github.io) abstract syntax tree, finds all block an
 
     $ npm install toga-markdown
 
-## Test
+## Usage
 
-    $ npm test
+```js
+var toga = require('toga'),
+    js = require('toga-js'),
+    md = require('toga-markdown'),
+    pura = require('toga-pura'),
+
+    config = {
+        src: './src/assets/**/*.js',
+        dest: './web/docs'
+    };
+
+toga
+    .src(config.src)
+    .pipe(js.parser())
+    .pipe(md.formatter())
+    .pipe(pura.compiler())
+    .pipe(toga.dest(config.dest));
+```
 
 ## Contribute
 
 [![Tasks][waffle-img]][waffle-url] [![Chat][gitter-img]][gitter-url] [![Tip][gittip-img]][gittip-url]
 
 Standards for this project, including tests, code coverage, and semantics are enforced with a build tool. Pull requests must include passing tests with 100% code coverage and no linting errors.
+
+### Test
+
+    $ npm test
 
 ----
 

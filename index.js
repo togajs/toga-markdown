@@ -7,78 +7,44 @@
  * Markdown, and replaces the values with the HTML output.
  */
 
-var proto,
-	Transform = require('stream').Transform,
-	inherits = require('mtil/function/inherits'),
+var through = require('through2'),
 	marked = require('marked'),
 	mixin = require('mtil/object/mixin'),
-	traverse = require('traverse');
-
-/**
- * @class Tunic
- * @extends Transform
- *
- * @constructor
- * @param {Object} options
- */
-function TogaFormatterMarkdown(options) {
-	if (!(this instanceof TogaFormatterMarkdown)) {
-		return new TogaFormatterMarkdown(options);
-	}
+	traverse = require('traverse'),
 
 	/**
-	 * @property options
-	 * @type {Object}
+	 * Default options.
 	 */
-	this.options = mixin({}, this.defaults, options);
+	defaults = {
+		keys: ['description'],
+		breaks: false,
+		gfm: true,
+		smartLists: true,
+		smartypants: false,
+		tables: true
+	};
 
-	Transform.call(this, { objectMode: true });
-}
+exports.formatter = function (options) {
+	options = mixin({}, defaults, options);
 
-proto = inherits(TogaFormatterMarkdown, Transform);
+	var keys = options.keys;
 
-/**
- * Default options for `marked`.
- *
- * @property defaults
- * @type {Object}
- */
-proto.defaults = {
-	breaks: false,
-	gfm: true,
-	smartLists: true,
-	smartypants: false,
-	tables: true
-};
-
-/**
- * Transforms descriptions from Markdown to HTML.
- *
- * @method _transform
- * @param {String} file
- * @param {String} enc
- * @param {Function} cb
- */
-proto._transform = function (file, enc, cb) {
-	var options = this.options,
-		toga = file && file.toga,
-		ast = toga && toga.ast;
-
-	if (!ast) {
-		this.push(file);
-
-		return cb();
-	}
-
-	traverse(ast).forEach(function (value) {
-		if (this.key === 'description' && value) {
+	function format(value) {
+		// jshint validthis: true
+		if (keys.indexOf(this.key) > -1 && value) {
 			this.update(marked(value, options));
 		}
-	});
+	}
 
-	this.push(file);
+	function walk(file, enc, cb) {
+		var ast = file && file.ast;
 
-	cb();
+		if (ast) {
+			traverse(ast).forEach(format);
+		}
+
+		cb(null, file);
+	}
+
+	return through.obj(walk);
 };
-
-module.exports = TogaFormatterMarkdown;

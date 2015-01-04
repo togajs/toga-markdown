@@ -6,7 +6,7 @@ var md = require('../index'),
 	toga = require('toga'),
 
 	config = {
-		src: __dirname + '/fixtures/**/*.json',
+		src:  __dirname + '/fixtures/**/*.json',
 		dest: __dirname + '/actual'
 	};
 
@@ -24,7 +24,7 @@ describe('toga-markdown e2e', function () {
 		count++;
 
 		var expected = file.path.replace('fixtures', 'expected');
-		expect(file.ast).to.eql(require(expected));
+		expect(JSON.stringify(file.ast)).to.be(JSON.stringify(require(expected)));
 		cb(null, file);
 	}
 
@@ -35,9 +35,11 @@ describe('toga-markdown e2e', function () {
 		cb(null, file);
 	}
 
-	it('should parse files with an ast', function (done) {
+	beforeEach(function () {
 		count = 0;
+	});
 
+	it('should parse files with an ast', function (done) {
 		toga
 			.src(config.src)
 			.pipe(es.map(toAst))
@@ -52,8 +54,6 @@ describe('toga-markdown e2e', function () {
 	});
 
 	it('should not parse files without an ast', function (done) {
-		count = 0;
-
 		var files = [
 			{ path: 'foo.js' },
 			{ path: 'foo.js', content: null }

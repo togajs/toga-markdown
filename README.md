@@ -1,6 +1,6 @@
 # `toga-markdown`
 
-[![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url]
+[![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url] [![Chat][gitter-img]][gitter-url]
 
 Walks a [Toga](http://togajs.github.io) abstract syntax tree, finds all block and tag descriptions, parses them as Markdown, and replaces the values with the HTML output.
 
@@ -31,7 +31,7 @@ toga
 
 ## Contribute
 
-[![Tasks][waffle-img]][waffle-url] [![Chat][gitter-img]][gitter-url] [![Tip][gittip-img]][gittip-url]
+[![Tasks][waffle-img]][waffle-url] [![Tip][gittip-img]][gittip-url]
 
 Standards for this project, including tests, code coverage, and semantics are enforced with a build tool. Pull requests must include passing tests with 100% code coverage and no linting errors.
 
@@ -48,7 +48,7 @@ Licensed under [MIT](http://shannonmoeller.com/mit.txt)
 [coveralls-img]: http://img.shields.io/coveralls/togajs/toga-markdown/master.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/r/togajs/toga-markdown
 [downloads-img]: http://img.shields.io/npm/dm/toga-markdown.svg?style=flat-square
-[gitter-img]:    http://img.shields.io/badge/chat-togajs/toga-blue.svg?style=flat-square
+[gitter-img]:    http://img.shields.io/badge/gitter-join_chat-1dce73.svg?style=flat-square
 [gitter-url]:    https://gitter.im/togajs/toga
 [gittip-img]:    http://img.shields.io/gittip/shannonmoeller.svg?style=flat-square
 [gittip-url]:    https://www.gittip.com/shannonmoeller

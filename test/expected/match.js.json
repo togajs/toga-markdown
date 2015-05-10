@@ -1,0 +1,82 @@
+{
+  "type": "Document",
+  "blocks": [
+    {
+      "type": "Code",
+      "contents": ""
+    },
+    {
+      "type": "Comment",
+      "description": "<h1 id=\"the-long-game\">The Long Game</h1>\n<p>I&#39;m the Doctor. Well, they call me the Doctor. I don&#39;t know why. I call me\nthe Doctor too. I still don&#39;t know why. Saving the world with meals on\nwheels. Stop talking, brain thinking. Hush. <em>Insistently</em> Bow ties are cool!\nCome on Amy, I&#39;m a normal bloke, tell me what normal blokes do! I&#39;m the\nDoctor. Well, they call me the Doctor. I don&#39;t know why. I call me the Doctor\ntoo. I still don&#39;t know why.</p>\n<h2 id=\"42\">42</h2>\n<p>They&#39;re not aliens, they&#39;re Earth...liens! Did I mention we have comfy\nchairs? You hit me with a cricket bat. Heh-haa! Super squeaky bum time!</p>\n<ul>\n<li>Father Christmas. Santa Claus. Or as I&#39;ve always known him: Jeff.</li>\n<li>They&#39;re not aliens, they&#39;re Earth&hellip;liens!</li>\n<li>You&#39;ve swallowed a planet!</li>\n</ul>\n<p>The way I see it, every life is a pile of good things and bad things....\nhey....the good things don&#39;t always soften the bad things; but vice-versa the\nbad things don&#39;t necessarily spoil the good things and make them unimportant.</p>\n<pre><code class=\"lang-js\">var foo = &#39;bar&#39;;\n\nfunction log(value) {\n    console.log(value);\n}\n\nlog(foo); // &lt;- &#39;bar&#39;\n</code></pre>\n<h2 id=\"gridlock\">Gridlock</h2>\n<p>You hate me; you want to kill me! Well, go on! Kill me! KILL ME! I&#39;m nobody&#39;s\ntaxi service; I&#39;m not gonna be there to catch you every time you feel like\njumping out of a spaceship. You know when grown-ups tell you &#39;everything&#39;s\ngoing to be fine&#39; and you think they&#39;re probably lying to make you feel\nbetter?</p>\n",
+      "tags": []
+    },
+    {
+      "type": "Code",
+      "contents": "import Foo from 'foo';"
+    },
+    {
+      "type": "Comment",
+      "description": "",
+      "tags": [
+        {
+          "tag": "class",
+          "name": "Bar",
+          "description": ""
+        },
+        {
+          "tag": "extends",
+          "name": "Foo"
+        }
+      ]
+    },
+    {
+      "type": "Code",
+      "contents": "export default class Bar extends Foo {"
+    },
+    {
+      "type": "Comment",
+      "description": "",
+      "tags": [
+        {
+          "tag": "constructor",
+          "description": ""
+        },
+        {
+          "tag": "param",
+          "type": "{Object}",
+          "name": "options",
+          "description": "<p>Options for the class.</p>\n"
+        }
+      ]
+    },
+    {
+      "type": "Code",
+      "contents": "\tconstructor(options) {\n\t\tsuper(options);\n\t}"
+    },
+    {
+      "type": "Comment",
+      "description": "",
+      "tags": [
+        {
+          "tag": "method",
+          "name": "log",
+          "description": ""
+        },
+        {
+          "tag": "param",
+          "type": "{*}",
+          "name": "value",
+          "description": ""
+        },
+        {
+          "tag": "chainable"
+        }
+      ]
+    },
+    {
+      "type": "Code",
+      "contents": "\tlog(value) {\n\t\tconsole.log(value);\n\t\treturn this;\n\t}\n}"
+    }
+  ],
+  "nav": {}
+}

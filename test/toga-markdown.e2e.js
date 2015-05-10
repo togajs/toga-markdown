@@ -1,72 +1,45 @@
-'use strict';
+/*eslint-env mocha */
 
-var md = require('../index'),
-	es = require('event-stream'),
-	expect = require('expect.js'),
-	toga = require('toga'),
+import { formatter } from '../src/toga-markdown';
+import Tunic from 'tunic';
+import expect from 'expect';
+import vinylFs from 'vinyl-fs';
+import { join } from 'path';
+import { readFileSync } from 'fs';
 
-	config = {
-		src:  __dirname + '/fixtures/**/*.json',
-		dest: __dirname + '/actual'
-	};
+var config = {
+	fixtures: join(__dirname, 'fixtures'),
+	expected: join(__dirname, 'expected'),
+	actual: join(__dirname, 'actual')
+};
 
 describe('toga-markdown e2e', function () {
-	var count;
+	describe('object streams', function () {
+		function testWithFile(filename, stream, done) {
+			var fixture = join(config.fixtures, filename),
+				expected = join(config.expected, filename + '.json');
 
-	function toAst(file, cb) {
-		count++;
+			function expectFile(file) {
+				var actual = JSON.stringify(file.ast, null, 2) + '\n';
 
-		file.ast = JSON.parse(file.contents.toString());
-		cb(null, file);
-	}
+				expect(actual).toEqual(String(readFileSync(expected)));
+			}
 
-	function toEqualExpected(file, cb) {
-		count++;
+			vinylFs
+				.src(fixture)
+				.pipe(new Tunic())
+				.pipe(stream)
+				.on('data', expectFile)
+				.on('error', done)
+				.on('end', done);
+		}
 
-		var expected = file.path.replace('fixtures', 'expected');
-		expect(JSON.stringify(file.ast)).to.be(JSON.stringify(require(expected)));
-		cb(null, file);
-	}
+		it('should format samples', function (done) {
+			testWithFile('match.js', formatter(), done);
+		});
 
-	function toEqualUndefined(file, cb) {
-		count++;
-
-		expect(file.ast).to.be(undefined);
-		cb(null, file);
-	}
-
-	beforeEach(function () {
-		count = 0;
-	});
-
-	it('should parse files with an ast', function (done) {
-		toga
-			.src(config.src)
-			.pipe(es.map(toAst))
-			.pipe(md.formatter())
-			.pipe(es.map(toEqualExpected))
-			.pipe(toga.dest(config.dest))
-			.on('error', done)
-			.on('end', function () {
-				expect(count).to.be(4);
-				done();
-			});
-	});
-
-	it('should not parse files without an ast', function (done) {
-		var files = [
-			{ path: 'foo.js' },
-			{ path: 'foo.js', content: null }
-		];
-
-		es
-			.readArray(files)
-			.pipe(md.formatter())
-			.pipe(es.map(toEqualUndefined))
-			.on('error', done)
-			.on('end', function () {
-				expect(count).to.be(2);
-				done();
-			});
+		it('should format samples', function (done) {
+			testWithFile('nomatch.js', formatter(), done);
+		});
 	});
 });

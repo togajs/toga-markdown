@@ -1,16 +1,16 @@
-'use strict';
+/*eslint-env mocha */
 
-var md = require('../index'),
-	expect = require('expect.js');
+import { formatter } from '../src/toga-markdown';
+import expect from 'expect';
 
 describe('toga-markdown spec', function () {
 	describe('formatter', function () {
 		it('should return a transform stream', function () {
-			var retval = md.formatter();
+			var retval = formatter();
 
-			expect(retval.pipe).to.be.a(Function);
-			expect(retval.readable).to.be(true);
-			expect(retval.writable).to.be(true);
+			expect(retval.pipe).toBeA(Function);
+			expect(retval.readable).toBe(true);
+			expect(retval.writable).toBe(true);
 		});
 	});
 });

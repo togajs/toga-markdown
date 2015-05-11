@@ -41,13 +41,11 @@ var formatterDefaults = {
 function formatter(options) {
 	options = _mtilObjectMixin2['default']({}, formatterDefaults, options);
 
-	var formatters = options.formatters || (options.formatters = []);
-
-	formatters.push(function (node, value) {
+	function updateDescription(node, value) {
 		if (node.key === 'description' && value != null) {
 			node.update(_marked2['default'](value, options));
 		}
-	});
+	}
 
-	return new _trifle2['default'](options);
+	return new _trifle2['default'](options).add(updateDescription);
 }

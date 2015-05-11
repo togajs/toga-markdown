@@ -24,15 +24,11 @@ var formatterDefaults = {
 export function formatter(options) {
 	options = mixin({}, formatterDefaults, options);
 
-	var formatters = options.formatters || (
-		options.formatters = []
-	);
-
-	formatters.push(function (node, value) {
+	function updateDescription(node, value) {
 		if (node.key === 'description' && value != null) {
 			node.update(marked(value, options));
 		}
-	});
+	}
 
-	return new Trifle(options);
+	return new Trifle(options).add(updateDescription);
 }

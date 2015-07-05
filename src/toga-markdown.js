@@ -10,7 +10,6 @@
 
 import Trifle from 'trifle';
 import marked from 'marked';
-import mixin from 'mtil/object/mixin';
 
 var formatterDefaults = {
 	name: 'toga-markdown',
@@ -22,7 +21,10 @@ var formatterDefaults = {
 };
 
 export function formatter(options) {
-	options = mixin({}, formatterDefaults, options);
+	options = {
+		...formatterDefaults,
+		...options
+	};
 
 	function updateDescription(node, value) {
 		if (node.key === 'description' && value != null) {
@@ -30,5 +32,6 @@ export function formatter(options) {
 		}
 	}
 
-	return new Trifle(options).add(updateDescription);
+	return new Trifle(options)
+		.add(updateDescription);
 }

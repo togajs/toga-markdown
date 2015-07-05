@@ -1,17 +1,17 @@
 /*eslint-env mocha */
 
-import { formatter } from '../src/toga-markdown';
-import Tunic from 'tunic';
-import expect from 'expect';
-import vinylFs from 'vinyl-fs';
-import { join } from 'path';
-import { readFileSync } from 'fs';
+var formatter = require('../src/toga-markdown').formatter,
+	Tunic = require('tunic'),
+	expect = require('expect'),
+	toga = require('toga'),
+	join = require('path').join,
+	readFileSync = require('fs').readFileSync,
 
-var config = {
-	fixtures: join(__dirname, 'fixtures'),
-	expected: join(__dirname, 'expected'),
-	actual: join(__dirname, 'actual')
-};
+	config = {
+		fixtures: join(__dirname, 'fixtures'),
+		expected: join(__dirname, 'expected'),
+		actual: join(__dirname, 'actual')
+	};
 
 describe('toga-markdown e2e', function () {
 	describe('object streams', function () {
@@ -25,7 +25,7 @@ describe('toga-markdown e2e', function () {
 				expect(actual).toEqual(String(readFileSync(expected)));
 			}
 
-			vinylFs
+			toga
 				.src(fixture)
 				.pipe(new Tunic())
 				.pipe(stream)

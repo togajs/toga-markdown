@@ -1,7 +1,7 @@
-/*eslint-env mocha */
+/* eslint-env mocha */
 
-var formatter = require('../src/toga-markdown').formatter,
-	expect = require('expect');
+import { formatter } from '../src/toga-markdown';
+import expect from 'expect';
 
 describe('toga-markdown spec', function () {
 	describe('formatter', function () {

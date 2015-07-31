@@ -12,7 +12,6 @@ import Trifle from 'trifle';
 import marked from 'marked';
 
 var formatterDefaults = {
-	name: 'toga-markdown',
 	breaks: false,
 	gfm: true,
 	smartLists: true,

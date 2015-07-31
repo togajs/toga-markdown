@@ -29,7 +29,6 @@ var _marked = require('marked');
 var _marked2 = _interopRequireDefault(_marked);
 
 var formatterDefaults = {
-	name: 'toga-markdown',
 	breaks: false,
 	gfm: true,
 	smartLists: true,
